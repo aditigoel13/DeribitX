@@ -1,10 +1,9 @@
 
-# QuantX Trader 🚀
+# DeribitX 🚀
 
-_A high-performance C++ trading system for automated order execution on Deribit Test._
 
 ## Overview
-QuantX Trader is a low-latency order execution and management system designed for cryptocurrency trading on Deribit Test.
+DeribitX is a low-latency order execution and management system designed for cryptocurrency trading on Deribit Test.
 It provides real-time market data streaming, order placement, and risk management using WebSocket connectivity.
 
 ## Features
@@ -41,7 +40,7 @@ Before running the system, generate API keys from [Deribit Test](https://test.de
 
 ## Running the Trading System
 ```sh
-./QuantX-Trader
+./DeribitX
 ```
 
 ## Usage
@@ -59,10 +58,6 @@ MarketDataStream stream;
 stream.subscribe("BTC-PERPETUAL");
 stream.start();
 ```
-
-## Limitations
-⚠️ This system currently **only supports a WebSocket client** for market data but does **not implement a WebSocket server** for data distribution.
-⚠️ **Use on Deribit Test only**—not for live trading without further modifications.
 
 ## Contributing
 Pull requests are welcome! Open an issue for feature requests or bug reports.
