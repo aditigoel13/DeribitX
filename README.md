@@ -62,9 +62,6 @@ stream.start();
 ## Contributing
 Pull requests are welcome! Open an issue for feature requests or bug reports.
 
-## License
-This project is private and not intended for redistribution.
-
 
 
   "
