@@ -1,43 +1,75 @@
-A high-performance C++ trading system for automated order execution on Deribit Test.
 
-Overview
+# QuantX Trader 🚀
 
-DeribitX is a low-latency order execution and management system designed for cryptocurrency trading on Deribit Test.It provides real-time market data streaming, order placement, and risk management using WebSocket connectivity.
+_A high-performance C++ trading system for automated order execution on Deribit Test._
 
-Features
+## Overview
+QuantX Trader is a low-latency order execution and management system designed for cryptocurrency trading on Deribit Test.
+It provides real-time market data streaming, order placement, and risk management using WebSocket connectivity.
 
-✅ Order Management: Place, cancel, and modify orders
-✅ Market Data Streaming: WebSocket client for real-time order book updates
-✅ Position Tracking: View open positions and trade history
-✅ Low-Latency Execution: Optimized for fast order placement
-✅ Supports Multiple Instruments: Spot, Futures, and Options
+## Features
+- ✅ **Order Management**: Place, cancel, and modify orders
+- ✅ **Market Data Streaming**: WebSocket client for real-time order book updates
+- ✅ **Position Tracking**: View open positions and trade history
+- ✅ **Low-Latency Execution**: Optimized for fast order placement
+- ✅ **Supports Multiple Instruments**: Spot, Futures, and Options
 
-Installation
+## Installation
+### 1️⃣ Prerequisites
+- C++17 or later
+- CMake
+- OpenSSL (for WebSocket authentication)
+- WebSocket++ or Boost.Beast (for WebSocket client)
 
-1️⃣ Prerequisites
+### 2️⃣ Build Instructions
+```sh
+git clone https://github.com/yourusername/QuantX-Trader.git
+cd QuantX-Trader
+mkdir build && cd build
+cmake ..
+make
+```
 
-C++17 or later
+## Configuration
+Before running the system, generate API keys from [Deribit Test](https://test.deribit.com/) and set them in `config.json`:
+```json
+{
+  "api_key": "your_api_key",
+  "api_secret": "your_api_secret"
+}
+```
 
-CMake
+## Running the Trading System
+```sh
+./QuantX-Trader
+```
 
-OpenSSL (for WebSocket authentication)
+## Usage
+### Order Management
+```cpp
+TradingClient client;
+client.place_order("BTC-PERPETUAL", "buy", 1, 50000);
+client.cancel_order("order_id");
+client.modify_order("order_id", 50500);
+```
 
-WebSocket++ or Boost.Beast (for WebSocket client)
+### WebSocket Market Data
+```cpp
+MarketDataStream stream;
+stream.subscribe("BTC-PERPETUAL");
+stream.start();
+```
 
-2️⃣ Build Instructions
-git clone https://github.com/yourusername/QuantX-Trader.git  
-cd DeribitX  
-mkdir build && cd build  
-cmake ..  
-make  
+## Limitations
+⚠️ This system currently **only supports a WebSocket client** for market data but does **not implement a WebSocket server** for data distribution.
+⚠️ **Use on Deribit Test only**—not for live trading without further modifications.
 
-Configuration
+## Contributing
+Pull requests are welcome! Open an issue for feature requests or bug reports.
 
-Before running the system, generate API keys from Deribit Test and set them in config.json:
-{  
-  "api_key": "your_api_key",  
-  "api_secret": "your_api_secret"  
-} 
-Running the Trading System
-./DeribitX
+## License
+This project is private and not intended for redistribution.
 
+
+
+  "
